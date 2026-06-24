@@ -64,6 +64,7 @@ let isDragging = false;
 let dragStartY = 0;
 let dragStartTarget = 0;
 let rafId = null;
+let measureRafId = null;
 
 function assetPath(work) {
   return `assets/${work.file}`;
@@ -114,6 +115,21 @@ function renderRail() {
       `,
     )
     .join("");
+
+  imageRail.querySelectorAll("img").forEach((image) => {
+    if (image.complete && image.naturalWidth > 0) return;
+    image.addEventListener("load", scheduleMeasureRail, { once: true });
+    image.addEventListener("error", scheduleMeasureRail, { once: true });
+  });
+}
+
+function scheduleMeasureRail() {
+  if (measureRafId) cancelAnimationFrame(measureRafId);
+  measureRafId = requestAnimationFrame(() => {
+    measureRafId = null;
+    measureRail();
+    setActive(activeIndex, false, false);
+  });
 }
 
 function measureRail() {
@@ -248,6 +264,7 @@ renderRail();
 requestAnimationFrame(() => {
   measureRail();
   setActive(0, false, false);
+  scheduleMeasureRail();
 });
 setInterval(renderDate, 30 * 1000);
 
