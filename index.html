@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="田小宇个人设计作品集网站" />
+    <title>田小宇 Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=bracket-svg-1" />
+  </head>
+  <body>
+    <main class="portfolio-shell" aria-label="田小宇个人设计作品集">
+      <header class="topbar">
+        <a class="logo" href="/" aria-label="Portfolio 首页">portfolio</a>
+        <time class="date" data-date datetime="">2026年6月24日 下午16:46</time>
+      </header>
+
+      <section class="work-interface" aria-label="作品浏览">
+        <nav class="work-nav" aria-label="作品列表" data-work-nav></nav>
+
+        <p class="work-family" data-work-family>电商 / 新媒体</p>
+
+        <div class="preview-stage" data-stage aria-label="滑动浏览作品">
+          <span class="bracket bracket--left" aria-hidden="true"></span>
+          <div class="rail-window" data-rail-window>
+            <div class="image-rail" data-image-rail></div>
+          </div>
+          <span class="bracket bracket--right" aria-hidden="true"></span>
+        </div>
+
+        <div class="work-meta" aria-live="polite">
+          <p data-work-type>线上设计</p>
+          <p data-work-index>01</p>
+        </div>
+      </section>
+
+      <footer class="bottombar">
+        <a class="signature" href="mailto:hello@example.com">田小宇</a>
+        <p>个人设计作品集网站</p>
+      </footer>
+    </main>
+
+    <section class="drawer" data-drawer aria-hidden="true" aria-label="作品详情">
+      <div class="drawer__top">
+        <div>
+          <p data-drawer-kicker>线上设计 / 01</p>
+          <h2 data-drawer-title>电商sku</h2>
+        </div>
+        <button class="drawer__close" type="button" data-close-drawer>Close</button>
+      </div>
+      <div class="drawer__media">
+        <img data-drawer-image src="assets/work-ascii/work-01.jpg" alt="漱口水sku 完整作品" />
+      </div>
+    </section>
+
+    <script src="script.js?v=ascii-assets-1"></script>
+  </body>
+</html>
